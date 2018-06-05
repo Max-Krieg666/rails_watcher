@@ -1,4 +1,4 @@
-class CreateWatcherEvents < ActiveRecord::Migration
+class CreateWatcherEvents < ActiveRecord::Migration[5.0]
   # Create table
   def self.up
     create_table :watcher_events do |t|

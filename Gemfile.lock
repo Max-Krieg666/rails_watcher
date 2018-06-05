@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_watcher (0.1.0)
+    rails_watcher (0.1.2)
       rails (>= 4.2)
 
 GEM
