@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Rails watcher</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <title>Welcome to RailsWatcher!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    "rails_watcher/application", media: "all" %>
-  <%= javascript_include_tag "rails_watcher/application" %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <%= stylesheet_link_tag    'rails_watcher/application', media: 'all' %>
+    <%= javascript_include_tag 'rails_watcher/application' %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>
