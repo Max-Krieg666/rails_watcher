@@ -1,0 +1,15 @@
+ru:
+  rails_watcher:
+    events:
+      id: Id
+      title: Название
+      status: Статус
+      description: Описание
+      data: Данные
+      type: Тип
+      user_login: Логин пользователя
+      user_ip: IP пользователя
+    navigation:
+      actions: Действия
+      details: Подробности->
+      search: Поиск

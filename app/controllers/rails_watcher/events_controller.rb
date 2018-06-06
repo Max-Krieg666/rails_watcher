@@ -1,20 +1,24 @@
-require_dependency "rails_watcher/application_controller"
+require_dependency 'rails_watcher/application_controller'
 
 module RailsWatcher
   class EventsController < ApplicationController
     before_action :set_event, only: [:show]
 
     def index
-      @events = 
+      @events =
         if search_params
-          Search.new(search_params).apply_search.order(created_at: :desc).limit(params[:limit] || 100).page(params[:page])
+          Search
+            .new(search_params)
+            .apply_search
+            .order(created_at: :desc)
+            .limit(params[:limit] || 100)
+            .page(params[:page])
         else
           RailsWatcher::Event.all.order(created_at: :desc).limit(100)
         end
     end
 
-    def show
-    end
+    def show; end
 
     private
 

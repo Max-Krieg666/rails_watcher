@@ -1,6 +1,5 @@
-class CreateWatcherEvents < ActiveRecord::Migration[5.0]
-  # Create table
-  def self.up
+class CreateWatcherEvents < ActiveRecord::Migration
+  def change
     create_table :watcher_events do |t|
       t.string :title,  null: false
       t.string :status, default: 'Success'
@@ -12,9 +11,5 @@ class CreateWatcherEvents < ActiveRecord::Migration[5.0]
 
       t.timestamps null: false
     end
-  end
-  # Drop table
-  def self.down
-    drop_table :watcher_events
   end
 end

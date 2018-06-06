@@ -7,14 +7,14 @@ require "rails_watcher/version"
 Gem::Specification.new do |s|
   s.name        = "rails_watcher"
   s.version     = RailsWatcher::VERSION
-  s.authors     = ["Max-Krieg666"]
+  s.authors     = ["Maxim Bogoyavlenskiy"]
   s.email       = ["maxon_B@mail.ru"]
   s.homepage    = "https://github.com/Max-Krieg666/rails_watcher"
-  s.summary     = "nope"
   s.description = "Watch & audit user activity."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", ">= 4.2"
+  s.add_dependency 'rails', '>= 4.2'
+  s.add_dependency 'rails-i18n', '~> 4.0'
 end
