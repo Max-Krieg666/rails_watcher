@@ -1,6 +1,7 @@
 ru:
   rails_watcher:
     events:
+      home_page: События
       id: Id
       title: Название
       status: Статус

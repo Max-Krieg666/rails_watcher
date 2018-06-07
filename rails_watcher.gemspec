@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["maxon_B@mail.ru"]
   s.homepage    = "https://github.com/Max-Krieg666/rails_watcher"
   s.description = "Watch & audit user activity."
+  s.summary     = "NOPE"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]

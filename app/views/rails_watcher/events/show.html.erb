@@ -1,0 +1,10 @@
+<div>
+  <%= t('rails_watcher.events.id') %>: <%= @event.id %>
+  <%= t('rails_watcher.events.title') %>: <%= @event.title %>
+  <%= t('rails_watcher.events.status') %>: <%= @event.status %>
+  <%= t('rails_watcher.events.type') %>: <%= @event.type %>
+  <%= t('rails_watcher.events.user_login') %>: <%= @event.user_login %>
+  <%= t('rails_watcher.events.user_ip') %>: <%= @event.user_ip %>
+</div>
+
+<%= link_to t(:back), events_path %>

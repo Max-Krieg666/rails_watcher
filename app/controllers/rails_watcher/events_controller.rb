@@ -7,7 +7,7 @@ module RailsWatcher
     def index
       @events =
         if search_params
-          Search
+          Finder
             .new(search_params)
             .apply_search
             .order(created_at: :desc)
@@ -23,9 +23,9 @@ module RailsWatcher
     private
 
     def search_params
-      return if params[:search].blank?
-      params.require(:search).permit(
-        :title, :description, :type
+      return if params[:finder].blank?
+      params.require(:finder).permit(
+        :title, :status, :type, :user_login, :user_ip
       )
     end
 

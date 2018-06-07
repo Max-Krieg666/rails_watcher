@@ -1,0 +1,35 @@
+<h3><%= t('rails_watcher.events.home_page') %></h3>
+<%= form_tag '/rails_watcher/events', method: :get do %>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="title"><%= t('rails_watcher.events.title') %>:</label>
+      <%= text_field_tag :title, params[:title] %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="status"><%= t('rails_watcher.events.status') %>:</label>
+      <%= text_field_tag :status, params[:status] %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="type"><%= t('rails_watcher.events.type') %>:</label>
+      <%= text_field_tag :type, params[:type] %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="user_login"><%= t('rails_watcher.events.user_login') %>:</label>
+      <%= text_field_tag :user_login, params[:user_login] %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="user_ip"><%= t('rails_watcher.events.user_ip') %>:</label>
+      <%= text_field_tag :user_ip, params[:user_ip] %>
+    </div>
+
+    <%= submit_tag t('rails_watcher.navigation.search'), name: nil %>
+  </div>
+<% end %>
+
+<div>
+  <%= render 'result' %>
+</div>
