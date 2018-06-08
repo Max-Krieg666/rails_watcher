@@ -27,9 +27,24 @@ $ bundle exec rails_watcher:install
 $ bundle exec db:migrate
 ```
 
+OK, now we prepare to start using!!!
+
 ## USAGE:
 How to use? It's easy & comfortably.
 ....
+
+Gem use standart-Application layout from your application,
+so please do NOT forget change all links in your app/views/layouts/application.html.*
+
+Example:
+```ruby
+link_to 'Users', users_path
+```
+you may change to:
+
+```ruby
+link_to 'Users', main_app.users_path
+```
 
 ## Contributing
 Contribution directions go here.
