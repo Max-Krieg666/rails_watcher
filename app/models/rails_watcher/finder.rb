@@ -26,10 +26,10 @@ module RailsWatcher
       @query
     end
 
-    # def type_search
-    #   @query = @query.where(type: type) if type.present?
-    #   @query
-    # end
+    def type_search
+      @query = @query.where('type LIKE ?', '%' + type + '%') if type.present?
+      @query
+    end
 
     def user_login_search
       @query = @query.where('user_login LIKE ?', '%' + user_login + '%') if user_login.present?
