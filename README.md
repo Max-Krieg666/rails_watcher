@@ -23,8 +23,8 @@ $ gem install rails_watcher
 
 Execute gem rake-task and install new migration:
 ```bash
-$ bundle exec rails_watcher:install
-$ bundle exec db:migrate
+$ bundle exec rake rails_watcher:install
+$ bundle exec rake db:migrate
 ```
 
 OK, now we prepare to start using!!!
@@ -45,6 +45,9 @@ you may change to:
 ```ruby
 link_to 'Users', main_app.users_path
 ```
+
+To include RailsWatcher EventCreator in your app:
+
 
 ## Contributing
 Contribution directions go here.

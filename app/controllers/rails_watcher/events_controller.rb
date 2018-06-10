@@ -5,6 +5,8 @@ module RailsWatcher
     before_action :set_event, only: [:show]
 
     def index
+      @kinds = RailsWatcher::Event.kinds
+      @statuses = RailsWatcher::Event.statuses
       @events =
         if search_params
           Finder
@@ -12,9 +14,9 @@ module RailsWatcher
             .apply_search
             .order(created_at: :desc)
             .limit(params[:limit] || 100)
-            .page(params[:page])
+            .page(params[:page] || 1)
         else
-          RailsWatcher::Event.all.order(created_at: :desc).limit(100)
+          RailsWatcher::Event.order(created_at: :desc).limit(100).page(params[:page] || 1)
         end
     end
 
@@ -23,9 +25,9 @@ module RailsWatcher
     private
 
     def search_params
-      return if params[:finder].blank?
-      params.require(:finder).permit(
-        :title, :status, :type, :user_login, :user_ip
+      return if params.blank?
+      params.permit(
+        :title, :status, :kind, :user_login, :user_ip
       )
     end
 

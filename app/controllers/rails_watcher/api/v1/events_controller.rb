@@ -21,7 +21,7 @@ module RailsWatcher
     def search_params
       return if params[:search].blank?
       params.require(:search).permit(
-        :title, :description, :type
+        :title, :description, :kind
       )
     end
 

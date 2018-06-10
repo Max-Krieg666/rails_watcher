@@ -7,10 +7,18 @@ ru:
       status: Статус
       description: Описание
       data: Данные
-      type: Тип
+      kind: Тип
       user_login: Логин пользователя
       user_ip: IP пользователя
+      created_at: Время создания
     navigation:
       actions: Действия
       details: Подробности->
       search: Поиск
+      back: Назад
+    kinds:
+      automatical: Автоматическое
+      manual: Пользовательское
+    statuses:
+      error: Ошибка
+      success: Успешно

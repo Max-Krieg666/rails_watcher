@@ -1,7 +1,7 @@
 module RailsWatcher
   class Finder
     include ActiveModel::Model
-    attr_accessor :query, :title, :status, :type, :user_login, :user_ip
+    attr_accessor :query, :title, :status, :kind, :user_login, :user_ip
 
     def initialize(params = {})
       super(params)
@@ -11,7 +11,7 @@ module RailsWatcher
       @query = RailsWatcher::Event
       title_search
       status_search
-      type_search
+      kind_search
       user_login_search
       user_ip_search
     end
@@ -26,8 +26,8 @@ module RailsWatcher
       @query
     end
 
-    def type_search
-      @query = @query.where('type LIKE ?', '%' + type + '%') if type.present?
+    def kind_search
+      @query = @query.where('kind LIKE ?', '%' + kind + '%') if kind.present?
       @query
     end
 

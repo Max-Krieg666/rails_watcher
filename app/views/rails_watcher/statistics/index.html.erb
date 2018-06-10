@@ -1,0 +1,40 @@
+<%#TODO%>
+
+<div>
+  <h3>DAILY</h3>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+window.onload = function() {
+
+var options = {
+	title: {
+		text: "Website Traffic Source"
+	},
+	data: [{
+			type: "pie",
+			startAngle: 45,
+			showInLegend: "true",
+			legendText: "{label}",
+			indexLabel: "{label} ({y})",
+			yValueFormatString:"#,##0.#"%"",
+			dataPoints: [
+				{ label: "full_count", y: 87 }
+			]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

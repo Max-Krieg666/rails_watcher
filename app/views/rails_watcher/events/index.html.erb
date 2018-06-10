@@ -2,34 +2,32 @@
 <%= form_tag '/rails_watcher/events', method: :get do %>
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="title"><%= t('rails_watcher.events.title') %>:</label>
-      <%= text_field_tag :title, params[:title] %>
+      <%= text_field_tag :title, params[:title], class: 'form-control', placeholder: t('rails_watcher.events.title') %>
+    </div>
+
+    <div class="form-group col-sm-2">
+      <%= select_tag('status', options_for_select(@statuses, params[:status]), class: 'selectpicker') %>
+    </div>
+
+    <div class="form-group col-sm-2">
+      <%= select_tag('kind', options_for_select(@kinds, params[:kind]), class: 'selectpicker') %>
     </div>
 
     <div class="form-group col-md-2">
-      <label for="status"><%= t('rails_watcher.events.status') %>:</label>
-      <%= text_field_tag :status, params[:status] %>
+      <%= text_field_tag :user_login, params[:user_login], class: 'form-control', placeholder: t('rails_watcher.events.user_login') %>
     </div>
 
     <div class="form-group col-md-2">
-      <label for="type"><%= t('rails_watcher.events.type') %>:</label>
-      <%= text_field_tag :type, params[:type] %>
+      <%= text_field_tag :user_ip, params[:user_ip], class: 'form-control', placeholder: t('rails_watcher.events.user_ip') %>
     </div>
 
-    <div class="form-group col-md-2">
-      <label for="user_login"><%= t('rails_watcher.events.user_login') %>:</label>
-      <%= text_field_tag :user_login, params[:user_login] %>
+    <div class="form-group col-sm-2">
+      <label></label>
+      <%= submit_tag t('rails_watcher.navigation.search'), name: nil, class: 'btn btn-default' %>
     </div>
-
-    <div class="form-group col-md-2">
-      <label for="user_ip"><%= t('rails_watcher.events.user_ip') %>:</label>
-      <%= text_field_tag :user_ip, params[:user_ip] %>
-    </div>
-
-    <%= submit_tag t('rails_watcher.navigation.search'), name: nil %>
   </div>
 <% end %>
 
-<div>
+<div id="result-container">
   <%= render 'result' %>
 </div>

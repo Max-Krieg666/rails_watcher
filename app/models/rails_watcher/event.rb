@@ -1,7 +1,7 @@
 # fields in database:
 # title
 # status
-# type
+# kind
 # description
 # data
 # user_login
@@ -12,14 +12,30 @@ module RailsWatcher
     self.table_name = 'watcher_events'
     validates :title, presence: true
 
-    scope :success, -> { where(status: 'Success') }
-    scope :error, -> { where(status: 'Error') }
+    scope :success, -> { where(status: 'success') }
+    scope :error, -> { where(status: 'error') }
 
-    scope :manual, -> { where(type: 'Manual') }
-    scope :automatical, -> { where(type: 'Automatical') }
+    scope :manual, -> { where(kind: 'manual') }
+    scope :automatical, -> { where(kind: 'automatical') }
 
     def show_ip
       user_ip.blank? ? '---' : user_ip
+    end
+
+    def self.kinds
+      arr = []
+      RailsWatcher::Event.all.map { |e| e.kind }.uniq.each do |x|
+        arr << [I18n.t("rails_watcher.kinds.#{x}"), x]
+      end
+      arr
+    end
+
+    def self.statuses
+      arr = []
+      RailsWatcher::Event.all.map { |e| e.status }.uniq.each do |x|
+        arr << [I18n.t("rails_watcher.statuses.#{x}"), x]
+      end
+      arr
     end
   end
 end

@@ -1,27 +1,30 @@
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th><%= t('rails_watcher.events.id') %></th>
-      <th><%= t('rails_watcher.events.title') %></th>
-      <th><%= t('rails_watcher.events.status') %></th>
-      <th><%= t('rails_watcher.events.type') %></th>
-      <th><%= t('rails_watcher.events.user_login') %></th>
-      <th><%= t('rails_watcher.events.user_ip') %></th>
-      <th><%= t('rails_watcher.navigation.actions') %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
+<div>
+  <table class="table table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= event.id %><td>
-        <td><%= event.title %><td>
-        <td><%= event.status %><td>
-        <td><%= event.type %><td>
-        <td><%= event.user_login %><td>
-        <td><%= event.show_ip %><td>
-        <td><%= link_to t('rails_watcher.navigation.details'), event %><td>
+        <th><%= t('rails_watcher.events.id') %></th>
+        <th><%= t('rails_watcher.events.title') %></th>
+        <th><%= t('rails_watcher.events.status') %></th>
+        <th><%= t('rails_watcher.events.kind') %></th>
+        <th><%= t('rails_watcher.events.user_login') %></th>
+        <th><%= t('rails_watcher.events.created_at') %></th>
+        <th><%= t('rails_watcher.navigation.actions') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.id %></td>
+          <td><%= event.title %></td>
+          <td><%= t("rails_watcher.statuses.#{event.status}") %></td>
+          <td><%= t("rails_watcher.kinds.#{event.kind}") %></td>
+          <td><%= event.user_login %></td>
+          <td><%= l event.created_at %></td>
+          <td><%= link_to t('rails_watcher.navigation.details'), "events/#{event.id}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @events unless @events.size.zero? %>

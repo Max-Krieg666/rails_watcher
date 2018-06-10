@@ -1,10 +1,29 @@
-<div>
-  <%= t('rails_watcher.events.id') %>: <%= @event.id %>
-  <%= t('rails_watcher.events.title') %>: <%= @event.title %>
-  <%= t('rails_watcher.events.status') %>: <%= @event.status %>
-  <%= t('rails_watcher.events.type') %>: <%= @event.type %>
-  <%= t('rails_watcher.events.user_login') %>: <%= @event.user_login %>
-  <%= t('rails_watcher.events.user_ip') %>: <%= @event.show_ip %>
-</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t('rails_watcher.events.title') %></th>
+      <th><%= t('rails_watcher.events.status') %></th>
+      <th><%= t('rails_watcher.events.kind') %></th>
+      <th><%= t('rails_watcher.events.description') %></th>
+      <th><%= t('rails_watcher.events.data') %></th>
+      <th><%= t('rails_watcher.events.user_login') %></th>
+      <th><%= t('rails_watcher.events.user_ip') %></th>
+      <th><%= t('rails_watcher.events.created_at') %></th>
+    </tr>
+  </thead>
 
-<%= link_to t(:back), events_path %>
+  <tbody>
+    <tr>
+      <td><%= @event.title %></td>
+      <td><%= t("rails_watcher.statuses.#{@event.status}") %></td>
+      <td><%= t("rails_watcher.kinds.#{@event.kind}") %></td>
+      <td><%= @event.description %></td>
+      <td><%= @event.data %></td>
+      <td><%= @event.user_login %></td>
+      <td><%= @event.show_ip %></td>
+      <td><%= @event.created_at %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to t('rails_watcher.navigation.back'), :back, class: 'btn btn-default' %>
