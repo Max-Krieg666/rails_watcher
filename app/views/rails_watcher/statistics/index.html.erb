@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @daily_manual_percentage %>%" title="Пользовательские события">
+    <div class="progress-bar progress-bar-info progress-bar-striped" style="width: <%= @daily_manual_percentage %>%" title="Пользовательские события">
       <%= @daily_manual %>
     </div>
     <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @daily_automatical %>%" title="Автоматические события">
@@ -21,7 +21,7 @@
   </div>
   <br>
   <h3>MONTHLY</h3>
-  Всего событий за месяц:
+  Всего событий за текущий месяц:
   <%= @monthly[:full_count] %>
   <% progress_bar_modulate_monthly(@monthly) %>
   <div class="progress">
@@ -34,7 +34,7 @@
   </div>
   <% progress_bar_modulate_monthly(@monthly) %>
   <div class="progress">
-    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @monthly_manual_percentage %>%" title="Пользовательские события">
+    <div class="progress-bar progress-bar-info progress-bar-striped" style="width: <%= @monthly_manual_percentage %>%" title="Пользовательские события">
       <%= @monthly_manual %>
     </div>
     <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @monthly_automatical_percentage %>%" title="Автоматические события">
@@ -43,7 +43,7 @@
   </div>
   <br>
   <h3>YEARLY</h3>
-  Всего событий за год:
+  Всего событий за текущий год:
   <%= @yearly[:full_count] %>
   <% progress_bar_modulate_yearly(@yearly) %>
   <div class="progress">
@@ -56,7 +56,7 @@
   </div>
   <% progress_bar_modulate_yearly(@yearly) %>
   <div class="progress">
-    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @yearly_manual_percentage %>%" title="Пользовательские события">
+    <div class="progress-bar progress-bar-info progress-bar-striped" style="width: <%= @yearly_manual_percentage %>%" title="Пользовательские события">
       <%= @yearly_manual %>
     </div>
     <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @yearly_automatical_percentage %>%" title="Автоматические события">
@@ -64,7 +64,7 @@
     </div>
   </div>
   <br>
-  <h3>YEARLY</h3>
+  <h3>ALL-TIME</h3>
   Событий за всё время:
   <%= @all_time[:full_count] %>
   <% progress_bar_modulate_all_time(@all_time) %>
@@ -78,7 +78,7 @@
   </div>
   <% progress_bar_modulate_all_time(@all_time) %>
   <div class="progress">
-    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @all_time_manual_percentage %>%" title="Пользовательские события">
+    <div class="progress-bar progress-bar-info progress-bar-striped" style="width: <%= @all_time_manual_percentage %>%" title="Пользовательские события">
       <%= @all_time_manual %>
     </div>
     <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @all_time_automatical_percentage %>%" title="Автоматические события">
