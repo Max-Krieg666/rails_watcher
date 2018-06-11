@@ -1,40 +1,88 @@
-<%#TODO%>
-
 <div>
   <h3>DAILY</h3>
+  Всего событий за сутки:
+  <%= @daily[:full_count] %>
+  <% progress_bar_modulate_daily(@daily) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @daily_success_percentage %>%" title="Успешно">
+      <%= @daily_success %>
+    </div>
+    <div class="progress-bar progress-bar-danger" style="width: <%= @daily_error_percentage %>%" title="Ошибка">
+      <%= @daily_error %>
+    </div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @daily_manual_percentage %>%" title="Пользовательские события">
+      <%= @daily_manual %>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @daily_automatical %>%" title="Автоматические события">
+      <%= @daily_automatical %>
+    </div>
+  </div>
+  <br>
+  <h3>MONTHLY</h3>
+  Всего событий за месяц:
+  <%= @monthly[:full_count] %>
+  <% progress_bar_modulate_monthly(@monthly) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @monthly_success_percentage %>%" title="Успешно">
+      <%= @monthly_success %>
+    </div>
+    <div class="progress-bar progress-bar-danger" style="width: <%= @monthly_error_percentage %>%" title="Ошибка">
+      <%= @monthly_error %>
+    </div>
+  </div>
+  <% progress_bar_modulate_monthly(@monthly) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @monthly_manual_percentage %>%" title="Пользовательские события">
+      <%= @monthly_manual %>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @monthly_automatical_percentage %>%" title="Автоматические события">
+      <%= @monthly_automatical %>
+    </div>
+  </div>
+  <br>
+  <h3>YEARLY</h3>
+  Всего событий за год:
+  <%= @yearly[:full_count] %>
+  <% progress_bar_modulate_yearly(@yearly) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @yearly_success_percentage %>%" title="Успешно">
+      <%= @yearly_success %>
+    </div>
+    <div class="progress-bar progress-bar-danger" style="width: <%= @yearly_error_percentage %>%" title="Ошибка">
+      <%= @yearly_error %>
+    </div>
+  </div>
+  <% progress_bar_modulate_yearly(@yearly) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @yearly_manual_percentage %>%" title="Пользовательские события">
+      <%= @yearly_manual %>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @yearly_automatical_percentage %>%" title="Автоматические события">
+      <%= @yearly_automatical %>
+    </div>
+  </div>
+  <br>
+  <h3>YEARLY</h3>
+  Событий за всё время:
+  <%= @all_time[:full_count] %>
+  <% progress_bar_modulate_all_time(@all_time) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: <%= @all_time_success_percentage %>%" title="Успешно">
+      <%= @all_time_success %>
+    </div>
+    <div class="progress-bar progress-bar-danger" style="width: <%= @all_time_error_percentage %>%" title="Ошибка">
+      <%= @all_time_error %>
+    </div>
+  </div>
+  <% progress_bar_modulate_all_time(@all_time) %>
+  <div class="progress">
+    <div class="progress-bar progress-bar-default progress-bar-striped" style="width: <%= @all_time_manual_percentage %>%" title="Пользовательские события">
+      <%= @all_time_manual %>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: <%= @all_time_automatical_percentage %>%" title="Автоматические события">
+      <%= @all_time_automatical %>
+    </div>
+  </div>
 </div>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script type="text/javascript">
-window.onload = function() {
-
-var options = {
-	title: {
-		text: "Website Traffic Source"
-	},
-	data: [{
-			type: "pie",
-			startAngle: 45,
-			showInLegend: "true",
-			legendText: "{label}",
-			indexLabel: "{label} ({y})",
-			yValueFormatString:"#,##0.#"%"",
-			dataPoints: [
-				{ label: "full_count", y: 87 }
-			]
-	}]
-};
-$("#chartContainer").CanvasJSChart(options);
-
-}
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
-<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-</body>
-</html>
