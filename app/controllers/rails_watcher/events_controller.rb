@@ -14,9 +14,8 @@ module RailsWatcher
             .apply_search
             .order(created_at: :desc)
             .limit(params[:limit] || 100)
-            .page(params[:page] || 1)
         else
-          RailsWatcher::Event.order(created_at: :desc).limit(100).page(params[:page] || 1)
+          RailsWatcher::Event.order(created_at: :desc).limit(100)
         end
     end
 

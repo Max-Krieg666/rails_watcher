@@ -19,5 +19,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 4.2'
   s.add_dependency 'rails-i18n', '~> 4.0'
   s.add_dependency 'bootstrap-sass'
-  s.add_dependency 'kaminari'
 end
