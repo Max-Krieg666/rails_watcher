@@ -64,12 +64,15 @@ RailsWatcher::EventCreator.start(
 
 After this steps you can use next pages (simple form and view interface):
 
+```ruby
 your_site.com/rails_watcher/events
 your_site.com/rails_watcher/events/:id
 your_site.com/rails_watcher/statistics
+```
 
 If you use not-Rails front-end, gem gives you an API. This is full list of API routes:
 
+```ruby
 your_site.com/rails_watcher/api/v1/events (with blank params)
 your_site.com/rails_watcher/api/v1/events (with params: title, status, kind, user_login, user_ip)
 your_site.com/rails_watcher/api/v1/events/:id
@@ -77,6 +80,7 @@ your_site.com/rails_watcher/api/v1/statistics/daily
 your_site.com/rails_watcher/api/v1/statistics/monthly
 your_site.com/rails_watcher/api/v1/statistics/yearly
 your_site.com/rails_watcher/api/v1/statistics/all_time
+```
 
 ## Contributing
 Contribution directions go here.
