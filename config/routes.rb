@@ -3,11 +3,9 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :show]
 
     resources :statistics, only: [:index]
-  end
 
-  namespace :api do
-    namespace :v1 do
-      namespace :rails_watcher do
+    namespace :api do
+      namespace :v1 do
         resources :events, only: [:index, :show]
         resources :statistics, only: [:index] do
           collection do
