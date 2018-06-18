@@ -8,7 +8,7 @@ Only 4.x +
 ## Installation
 Add this line to your application's Gemfile:
 ```ruby
-gem 'rails_watcher'
+gem 'rails_watcher', git: 'https://github.com/Max-Krieg666/rails_watcher.git'
 ```
 
 And then execute:
